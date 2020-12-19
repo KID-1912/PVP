@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6,form,fieldset,legend,input,button,textarea,div,th,td{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+html{
+    font-size: 13.888px;
+    overflow-y: scroll;
+    overflow: -moz-scrollbars;
+    -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s{
+   text-decoration: none; 
+}
+i, em ,address{
+    font-style: normal;
+}
+a{
+    color:inherit;
+    text-decoration: none;
+}
+ul,ol{
+    list-style: none;
+}
+button,input,select,textarea{
+    font: inherit;
+    color: inherit;
+}
+
+fieldset, img,{
+    border: 0;
+}
+img {
+    vertical-align: middle;
+}
+
+select, input,button {
+// vertical-align: middle;
+    outline:0;
+    border:none;
+}
+
+textarea {
+    overflow:auto;
+    resize: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing:0;
+}

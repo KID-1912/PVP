@@ -1,0 +1,42 @@
+  /*图片 upload框样式*/
+  .avatar-uploader .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .avatar-uploader .el-upload:hover {
+    border-color: #409EFF;
+  }
+
+  .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 178px;
+    height: 178px;
+    line-height: 178px;
+    text-align: center;
+  }
+  
+  /*上传图片即时显示样式*/
+  .avatar {
+    height: 100px;
+    width: auto;
+    display: block;
+    border-radius: 20px;
+  }
+  
+  .banner{
+    font-size: 0;
+    height: 200px;
+  }
+
+
+  /*小图标显示样式*/
+  .icon-avatar,.icon-item{
+    height: 3rem;
+    width: auto;
+    border-radius: 0.5rem;
+  }

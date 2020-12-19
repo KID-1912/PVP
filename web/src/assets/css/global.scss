@@ -1,0 +1,77 @@
+// 变量
+$colors: (
+  "white": #fff,
+  "black": #000,
+  "dark": #333,
+  "dark2": #212222,
+  "grey": #666,
+  "grey2": #777,
+  "blue": #4394e4,
+  "theme": #db9e3f,
+  "headline": #212222,
+  "title": #222,
+  "hot": #ff3636,
+  "icon": #d4d9de,
+  "date": #9fa0a0,
+);
+$bgColors: (
+  "white": #fff,
+  "black": #000,
+  "theme": #db9e3f,
+  "dpBlue": #4b67af,
+  "light": #f9f9f9,
+  "lighter": #f4f4f4,
+);
+$font-sizes: (
+  "xs": 0.6133, // 10px
+  "sm": 0.736, // 12px
+  "md": 0.7973, // 13px
+  "lg": 0.8587, //14px
+  "xl": 0.9813 //16px
+);
+
+// 边框色
+$bdColors: (
+  grey: #d4d9de,
+);
+
+$flex-jc: (
+  "start": flex-start,
+  "center": center,
+  "end": flex-end,
+  "between": space-between,
+  "around": space-around
+);
+
+$flex-al: (
+  "start": flex-start,
+  "center": center,
+  "end": flex-end,
+);
+
+$flex-as: (
+  "start": flex-start,
+  "center": center,
+  "end": flex-end,
+);
+
+
+$space-types: (
+  m: margin,
+  p: padding
+);
+
+$space-directions: (
+  t: top,
+  b: bottom,
+  l: left,
+  r: right
+);
+
+$space-sizes: (
+  1: 0.3067, //5px 
+  2: 0.6133, //10px
+  3: 0.8587, //14px
+  4: 1.2267, // 20px+
+  5: 2.4866  // 40px+
+);

@@ -1,0 +1,291 @@
+@import 'reset.scss';
+
+// sass变量在global.scss文件中作为全局变量
+
+// 快速样式与辅助类
+@each $colorKey,$colorVal in $colors{ //文字颜色类
+  .t-#{$colorKey}{
+    color: #{$colorVal};
+  }
+}
+
+@each $sizeKey,$size in $font-sizes{ //文字字号类
+  .fs-#{$sizeKey}{
+    font-size: #{$size}rem;
+  }
+}
+
+@each $colorKey,$colorVal in $bgColors{ //背景颜色类
+  .bgc-#{$colorKey}{
+    background-color: #{$colorVal};
+  }
+}
+
+@each $var in ("center","left","right"){ //文本对齐类
+  .t-#{$var}{
+    text-align: #{$var} !important;
+  }
+}
+
+
+.t-ellipsis{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.w-100{
+  width: 100%;
+}
+
+.h-100{
+  height: 100%;
+}
+
+.fl{
+  float: left;
+}
+
+.clearfix{
+  _zoom: 1;
+}
+.clearfix::after{
+  display: block;
+  content: '.';
+  clear: both;
+  overflow: hidden
+}
+
+// flex布局快速类
+.d-flex{
+  display: flex;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+@each $flexKey,$flexVal in $flex-jc{
+  .jc-#{$flexKey}{
+    justify-content: $flexVal;
+  }
+}
+
+@each $flexKey,$flexVal in $flex-al{
+  .al-#{$flexKey}{
+   align-items: $flexVal;
+  }
+}
+
+@each $flexKey,$flexVal in $flex-al{
+  .as-#{$flexKey}{
+   align-self: $flexVal;
+  }
+}
+
+.flex-1{
+  flex: 1;
+}
+
+
+// 边距辅助类
+@each $typeKey,$typeVal in $space-types{
+  // .m-1, p-1...
+  @each $sizeKey,$sizeVal in $space-sizes{
+    .#{$typeKey}-#{$sizeKey}{
+      #{$typeVal}: #{$sizeVal}rem;
+    }
+  }
+  // .mx-1 px-1...
+  @each $sizeKey,$sizeVal in $space-sizes{
+    .#{$typeKey}x-#{$sizeKey}{
+      #{$typeVal}-left: #{$sizeVal}rem;
+      #{$typeVal}-right: #{$sizeVal}rem;
+    }
+  }
+
+  // .my-1...
+  @each $sizeKey,$sizeVal in $space-sizes{
+    .#{$typeKey}y-#{$sizeKey}{
+      #{$typeVal}-top: #{$sizeVal}rem;
+      #{$typeVal}-bottom: #{$sizeVal}rem;
+    }
+  }
+
+  // .mt-1, .mr-2...
+  @each $directKey,$directVal in $space-directions{
+    @each $sizeKey,$sizeVal in $space-sizes{
+      .#{$typeKey}#{$directKey}-#{$sizeKey}{
+        #{$typeVal}-#{$directVal}: #{$sizeVal}rem;
+      }
+    }
+  }
+}
+
+// border-radius
+.bd-filt{
+  border-radius: 5px;
+}
+
+// a链接块标签
+.a-block{
+  display: block;
+}
+
+// sprite图标类
+.sprite{
+  display: inline-block;
+  background-size: 23.0rem 27.9067rem;
+  background-repeat: no-repeat;
+  background-image: url('~assets/img/sprite.png');
+  // navbar的icon类
+  &.sprite-topbar{
+    display: flex;
+    background-position:  0 87.195%;
+  }
+  &.sprite-logo{
+    height: 1.84rem;
+    width: 1.84rem;
+    background-position: 0 72.588%;
+  }
+  &.sprite-download{
+    height: 1.4444rem;
+    width: 3.7037rem;
+    border-radius: 2px;
+    background-position: 18.73% 71.694%;
+  }
+  // home页nav公共样式
+  &.nav-sprite{
+    width: 1.4107rem;
+    height: 1.2267rem;
+  }
+  &.sprite-blz{
+    background-position: 63.546% 15.517%;
+  }
+  &.sprite-gsz{
+    background-position: 90.483% 15.614%;
+  }
+  &.sprite-zbsc{
+    background-position: 36.746% 0.924%;
+  }
+  &.sprite-tyf{
+    background-position: 10.408% 15.517%;
+  }
+  &.sprite-xrzq{
+    background-position: 89.733% 1.266%;
+  }
+  &.sprite-rycc{
+    background-position: 36.467% 15.287%;
+  }
+  &.sprite-wzyd{
+    background-position: 63.3% 0.927%;
+  }
+  &.sprite-gzh{
+    background-position:  0 96.207%;
+  }
+  &.sprite-bbjs{
+    background-size: 100% auto;
+    background-image: url('~assets/img/version-icon.png');
+  }
+  &.sprite-djhj{
+    width: 100%;
+    background-size: auto 1.472rem;
+    background-position: center;
+    background-image: url('~assets/img/djhj.png');
+  }
+  &.sprite-wxwzt{
+    width: 100%;
+    background-size: auto 50%;
+    background-position: center;
+    background-image: url('~assets/img/wxwzt.png');
+  }
+  &.sprite-cyhdy{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-image: url('~assets/img/cyhdy.png');
+  }
+  &.sprtie-arrow-bottom{
+    height: 0.5556rem;
+    width: 0.5556rem;
+    background-position: 38.577% 52.076%;
+  }
+  // 卡片图标
+  &.cart-sprite{
+    height: 0.7973rem;
+    width: 0.7973rem;
+  }
+  &.sprite-hero{
+    background-position: 46.768% 60.452%;
+  }
+  &.sprite-news{
+    background-position: 0.138% 50.452%;
+  }
+  &.sprite-video{
+    background-position: 0.138% 56.532%;
+  }
+  &.sprite-more{
+    height: 0.184rem;
+    width: 1.104rem;
+    background-position: 47.619% 56.305%;
+  }
+}
+
+// icon图标类
+.icon{
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  &.icon-left{
+    width: 0.5556rem;
+    background-image: url('~assets/img/backBg.png');
+  }
+  &.icon-lin{
+    width: 1.6667rem;
+    height: 1.3889rem;
+    background-image: url('~assets/img/lin.png');
+  }
+  &.icon-item{
+    width: 1rem;
+    height: 1rem;
+    background-image: url('~assets/img/icon-item.png');   
+  }
+  &.icon-usage{
+    width: 1rem;
+    height: 1rem;
+    background-image: url('~assets/img/icon-usage.png');   
+  }
+  &.icon-battle{
+    width: 1rem;
+    height: 1rem;
+    background-image: url('~assets/img/icon-battle.png');   
+  }
+  &.icon-team{
+    width: 1rem;
+    height: 1rem;
+    background-image: url('~assets/img/icon-team.png');   
+  }
+  &.icon-related{
+    width: 1rem;
+    height: 1rem;
+    background-image: url('~assets/img/icon-relate.png');   
+  }
+}
+
+body {
+  max-width: 1080px;
+  margin: 0 auto;
+  font: 13px / 1.2 Arial, "Microsoft YaHei", "\5b8b\4f53" ,sans-serif; /*宋体 unicode */
+  color: map-get($colors,dark);
+  background-color: #f1f1f1;
+  // user-select: none; 图片文字不允许用户选中
+  -webkit-font-smoothing: antialiased; //平滑字体
+}
