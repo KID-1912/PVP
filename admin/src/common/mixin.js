@@ -6,7 +6,7 @@
 export const mixinUpload = {
   data(){
     return {
-      uploadUrl: "./api/upload",
+      uploadUrl: "/admin/api/upload",
     }
   },
   methods: {
