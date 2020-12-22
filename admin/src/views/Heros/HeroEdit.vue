@@ -116,7 +116,7 @@
           @click="model.skills.push({})">
             <i class="el-icon-plus"></i> 添加技能
           </el-button>
-          <el-row type="flex">
+          <el-row type="flex" style="flex-wrap: wrap">
             <el-col :md="12" v-for="(item,i) in model.skills" :key="i">
               <el-form-item label="名称">
                 <el-input v-model="item.name"></el-input>

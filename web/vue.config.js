@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  outputDir: __dirname + '/../server/web',
   transpileDependencies: ['swiper'],
 
 // 目录别名配置

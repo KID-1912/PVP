@@ -101,7 +101,6 @@ module.exports = app => {
 
 // 广告接口
   router.get('/ads/:name',async (req,res) => {
-    console.log("hhh");
     const model = await Ad.findOne({
       name: req.params.name
     });

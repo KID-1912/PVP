@@ -5,7 +5,8 @@ import router from '../router'
 export function request(config){
   const instance = axios.create({
     timeout: 5000,
-    baseURL: 'http://localhost:3000/admin/api'
+    baseURL: process.env.VUE_APP_API_URL || '/admin/api'
+    // baseURL: 'http://localhost:3000/admin/api'
   });
 
   instance.interceptors.request.use((config) => {

@@ -1,6 +1,6 @@
 <template>
     <div class="home-nav t-center">
-      <ul class="d-flex flex-wrap mt-3 pt-2 fs-sm t-title">
+      <ul class="d-flex flex-wrap mt-3 pt-2 fs-sm t-title" :class="{'drop-up': !isDown}">
         <li class="nav-item" 
         v-for="(item,i) in navs" :key="i">
           <a :href="item.url" 
@@ -10,8 +10,8 @@
           </a>
         </li>
       </ul>
-      <div class="nav-toggle w-100 mt-2">
-        <span><i class="sprite sprtie-arrow-bottom"></i>收起</span>
+      <div class="nav-toggle w-100 mt-2" @click="isDown=!isDown">
+        <span><i class="sprite sprtie-arrow-bottom" :class="{'sprtie-arrow-top': !isDown}"></i>{{isDown?"收起":"展开"}}</span>
       </div>
     </div>
 </template>
@@ -34,7 +34,8 @@
   export default {
     data(){
       return {
-        navs
+        navs,
+        isDown: false
       }
     }
   }
@@ -43,6 +44,10 @@
 <style scoped lang="scss">
   .home-nav{
     background-color: #fff;
+    .drop-up{
+      height: 3.3733rem;
+      overflow: hidden;
+    }
     .nav-item{
       width: 25%;
       height: 2.7778rem;
@@ -59,6 +64,9 @@
       background-color: map-get($bgColors,light);
       .sprtie-arrow-bottom{
         margin-right: 0.2778rem;
+      }
+      i.sprtie-arrow-top{
+        transform: rotate(180deg);
       }
     } 
   }

@@ -19,6 +19,7 @@
 <style scoped lang="scss">
   .topbar{
     position: fixed;
+    max-width: 1080px;
     background-color: #000;
     z-index: 999;
   }

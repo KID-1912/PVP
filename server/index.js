@@ -19,12 +19,17 @@ app.use(require('cors')());
 require('./plugins/db.js')(app);
 
 // 路由
+  //静态资源托管
+  //uploads上传图片资源
+  app.use('/',express.static(path.join(__dirname,"./web")));
+  app.use('/uploads',express.static(path.join(__dirname,"./uploads")));
+  //admin静态资源
+  app.use('/admin',express.static(path.join(__dirname,"./admin")));
+
   // admin通用增删改查路由
   require('./routes/admin')(app);
   // admin上传文件路由
   require('./routes/admin/upload')(app);
-  //开启uploads目录静态资源托管
-  app.use('/uploads',express.static(path.join(__dirname,"./uploads")));
   // admin登录路由
   require('./routes/admin/login')(app);
 
@@ -32,7 +37,7 @@ require('./plugins/db.js')(app);
   require('./routes/web')(app);
 
 // 服务端错误信息响应
-  // require('./routes/admin/error')(app);
+  require('./routes/admin/error')(app);
 
 
 

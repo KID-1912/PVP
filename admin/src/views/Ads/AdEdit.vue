@@ -8,7 +8,7 @@
       <el-button type="text" size="small" @click="model.items.push({})">
         <i class="el-icon-plus"></i> 添加广告项
       </el-button>
-      <el-row type="flex">
+      <el-row type="flex" style="flex-wrap: wrap">
         <el-col :md="12" v-for="(item,i) in model.items" :key="i">
           <el-form-item label="标题">
             <el-input v-model="item.title"></el-input>

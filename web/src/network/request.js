@@ -3,7 +3,7 @@ import axios from 'axios'
 export default function(config){
   const instance = new axios.create({
     timeout: 5000,
-    baseURL: 'http://172.26.80.54:3000/web/api',
+    baseURL: process.env.VUE_APP_API_URL || '/web/api',
   })
 
   instance.interceptors.response.use(result => {
