@@ -20,8 +20,8 @@ require('./plugins/db.js')(app);
 
 // 路由
   //静态资源托管
-  //uploads上传图片资源
   app.use('/',express.static(path.join(__dirname,"./web")));
+  //uploads上传图片资源
   app.use('/uploads',express.static(path.join(__dirname,"./uploads")));
   //admin静态资源
   app.use('/admin',express.static(path.join(__dirname,"./admin")));

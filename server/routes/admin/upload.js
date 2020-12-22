@@ -18,7 +18,7 @@ module.exports =  app => {
     upload.single('file'),  //将前端上传的文件保存至/uploads文件夹
     (req,res) => {
     const file = req.file; //multer将上传完成的文件的信息暂存至req
-    file.url = `http://localhost:3000/uploads/${file.filename}`; //添加图片的地址信息
+    file.url = `http://xiyitao.top/uploads/${file.filename}`; //添加图片的地址信息
     res.send(file); //返回文件信息
   });
 }
