@@ -5,6 +5,7 @@
     </navbar>
     <router-view></router-view>
     <div class="copyright t-center fs-sm py-1">网站备案：鄂ICP备2020023380号</div>
+    <img src="/qiniu.jpg">
   </div>
 </template>
 
