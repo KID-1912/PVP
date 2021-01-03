@@ -34,7 +34,7 @@ const router = new Router({
     },
     {
       path: '',
-      // redirect: '/articles/list',
+      redirect: '/articles/list',
       component: Main,
       children: [
         {path: '/categorys/create',component: CategoryCreate},
