@@ -28,12 +28,7 @@ const Login = () => import('views/Login.vue');
 const router = new Router({
   routes: [
     {
-      path: '/login',
-      component: Login,
-      meta: {isPublic: true}
-    },
-    {
-      path: '',
+      path: '/',
       redirect: '/articles/list',
       component: Main,
       children: [
@@ -56,9 +51,14 @@ const router = new Router({
         {path: '/admin_users/list',component: AdminUserList},
         {path: '/admin_users/edit/:id',component: AdminUserCreate,props: true}
       ]
+    },
+    {
+      path: '/login',
+      component: Login,
+      meta: {isPublic: true}
     }
   ],
-  mode: 'history'
+  // mode: 'history'
 })
 
 router.beforeEach((to,from,next) => {
