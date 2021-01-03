@@ -58,7 +58,7 @@ const router = new Router({
       meta: {isPublic: true}
     }
   ],
-  // mode: 'history'
+  mode: 'history'
 })
 
 router.beforeEach((to,from,next) => {
