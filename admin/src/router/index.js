@@ -58,7 +58,8 @@ const router = new Router({
       meta: {isPublic: true}
     }
   ],
-  mode: 'history'
+  mode: 'history',
+  base: "/admin/"
 })
 
 router.beforeEach((to,from,next) => {
