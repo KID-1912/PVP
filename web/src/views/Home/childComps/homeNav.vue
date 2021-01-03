@@ -62,6 +62,7 @@
       height: 1.8333rem;
       line-height: 1.8333rem;
       background-color: map-get($bgColors,light);
+      cursor: default;
       .sprtie-arrow-bottom{
         margin-right: 0.2778rem;
       }

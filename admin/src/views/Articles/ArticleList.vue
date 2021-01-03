@@ -4,7 +4,7 @@
     </el-table-column>
     <el-table-column prop="title" label="标题">
     </el-table-column>
-    <el-table-column label="所属分类">
+    <el-table-column label="所属分类" width="250">
       <template slot-scope="scope">
         <el-tag 
         v-for="(item,i) in scope.row.category" :key="i"
@@ -13,21 +13,11 @@
         </el-tag> 
       </template>
     </el-table-column>
-    <el-table-column
-      fixed="right"
-      label="操作"
-      width="100">
+    <el-table-column label="操作" width="150">
       <template slot-scope="scope">
         <el-button 
         @click="$router.push(`/articles/edit/${scope.row._id}`)" 
         type="text" size="small">编辑</el-button>
-      </template>
-    </el-table-column>
-    <el-table-column
-      fixed="right"
-      label="删除"
-      width="100">
-      <template slot-scope="scope">
         <el-button 
         @click="remove(scope.row)"
         type="text" size="small">删除</el-button>
