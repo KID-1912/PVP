@@ -33,7 +33,7 @@ const router = new Router({
       meta: {isPublic: true}
     },
     {
-      path: '/',
+      path: '',
       // redirect: '/articles/list',
       component: Main,
       children: [
