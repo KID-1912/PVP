@@ -3,7 +3,7 @@ module.exports = (options) => {
   return async (req,res,next) => {
     // 1. 获取token
     const token = String((req.headers.authorization || '')).split(' ').pop();
-    assert(token,401,"没有token值");
+    assert(token,401,"请重新登录");
     
     // 2. 转换token并检验
     const model = require('../models/AdminUser');
@@ -12,7 +12,7 @@ module.exports = (options) => {
     try{
       json = jwt.verify(token,req.app.get('secret'));   
     } catch(e){
-      assert(false,401,'无效token');
+      assert(false,401,'登录状态过期');
     }
     
     // 3. 查找用户id

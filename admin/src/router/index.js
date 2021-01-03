@@ -4,7 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router);
 
 // 一级路由
-const Main = () => import('views/Main.vue');
+import Main from 'views/Main.vue';
 const Login = () => import('views/Login.vue');
   // 二级路由
   const CategoryCreate = () => import('views/Categorys/CategoryEdit.vue');
@@ -37,7 +37,6 @@ const router = new Router({
       // redirect: '/articles/list',
       component: Main,
       children: [
-        {path: '/',component: ArticleList},
         {path: '/categorys/create',component: CategoryCreate},
         {path: '/categorys/list',component: CategoryList},
         {path: '/categorys/edit/:id',component: CategoryCreate,props: true},
