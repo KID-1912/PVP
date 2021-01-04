@@ -1,6 +1,7 @@
 <template>
   <card class="news card mt-3 px-3 t-dark2" :model="card">
     <template #card-content>
+      <slot name="card-banner"></slot>
       <card-nav ref="nav" class="nav fs-md t-title" 
       :navs="categories.map(item => item.name)" 
       @handleClick="(item,i) => $refs.swiper.$swiper.slideTo(i)">

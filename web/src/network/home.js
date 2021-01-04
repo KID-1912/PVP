@@ -21,3 +21,10 @@ export function getBanners(){
     method: "get"
   })
 }
+
+export function getCardBanner(){
+  return request({
+    url: "/ads/cardHero",
+    method: "get"
+  })
+}

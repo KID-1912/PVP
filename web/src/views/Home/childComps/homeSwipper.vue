@@ -1,7 +1,7 @@
 <template>
   <swipper swiper="home-swiper">
     <swipper-slide v-for="item in banners.items" :key="item._id">
-      <a class="d-block" :href="item.url"><img class="w-100" :src="item.image"></a>
+      <div @click="$router.push(`/article/${item.url}`)"><img class="w-100" :src="item.image"></div>
     </swipper-slide>
   </swipper>
 </template>

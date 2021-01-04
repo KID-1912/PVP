@@ -4,8 +4,6 @@
     <navbar class="navbar bgc-theme fs-lg t-white" :navs="navs">
     </navbar>
     <router-view></router-view>
-    <div class="copyright t-center fs-sm py-1">网站备案：鄂ICP备2020023380号</div>
-    <img src="/qiniu.jpg">
   </div>
 </template>
 
@@ -45,9 +43,5 @@
         border-bottom: 0.1667rem solid map-get($colors,"white");
       }
     }
-  }
-  .copyright{
-    color: #fff;
-    background-color: #ccc;
   }
 </style>

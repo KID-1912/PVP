@@ -9,6 +9,11 @@
     <home-card cardName="news"
     title="新闻资讯" class="news-card" :categories="news" 
     icon="sprite cart-sprite sprite-news" icon_more="sprite sprite-more">
+      <template #card-banner>
+        <div v-if="cardBanner.items" class="mt-1 px-1">
+          <img class="w-100" :src="cardBanner.items[0].image">
+        </div>
+      </template>
       <template #list-item="list">
         <ul>
           <li v-for="(item,i) in list.cate.newslist" :key="i">
@@ -54,7 +59,7 @@
 <script>
 import dayjs from 'dayjs'
 // 请求
-import {getNewsList,getHeroesList} from 'network/home.js'
+import {getNewsList,getHeroesList,getCardBanner} from 'network/home.js'
 
 // 组件
 import homeSwipper from './childComps/homeSwipper.vue'
@@ -66,7 +71,8 @@ export default {
   data() {
     return {
       news: [],
-      heroes: []
+      heroes: [],
+      cardBanner: {}
     }
   },
   computed: {
@@ -95,6 +101,7 @@ export default {
     async fetch(){
       this.news = await getNewsList();
       this.heroes = await getHeroesList();
+      this.cardBanner = await getCardBanner();
     }
   },
   created(){
