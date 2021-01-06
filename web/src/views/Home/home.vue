@@ -42,10 +42,6 @@
         <ul class="d-flex flex-wrap">
           <li class="list-item fs-sm t-dark2 t-center" 
           v-for="(item,i) in list.cate.heroeslist" :key="i">
-<!--             <router-link class="a-block" :to="`/hero/${item._id}`">
-              <img class="w-100" :src="item.avatar">
-              <h5>{{item.name}}</h5>
-            </router-link> -->
             <div @click="$router.push(`/hero/${item._id}`)">
               <img class="w-100" :src="item.avatar">
               <h5>{{item.name}}</h5>
@@ -64,7 +60,7 @@
           <li class="list-item mb-2 fs-md t-dark2" 
           v-for="(item,i) in list.cate.videolist" :key="i">
             <router-link class="a-block" :to="`/video/${item._id}`">
-              <img class="bd-filt w-100" :src="item.banner">
+              <img class="video-pic bd-filt w-100" :src="item.banner">
               <h5 class="video-title mt-1">{{item.title}}</h5>
               <div class="d-flex jc-between fs-sm t-grey2">
                 <span><i class="sprite sprite-playCount mx-1"></i>{{item.playCount}}</span>
@@ -231,7 +227,9 @@
   .list-item{
     width: 49%;
     line-height: 1.5;
-
+    .video-pic{
+      height: 6.348rem;
+    }
     .video-title{
       @include t-ellipsis;
       height: 2.4rem;
