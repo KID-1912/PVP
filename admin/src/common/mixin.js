@@ -6,7 +6,7 @@
 export const mixinUpload = {
   data(){
     return {
-      uploadUrl: process.env.VUE_APP_API_URL+'/upload' || "/admin/api/upload",
+      uploadUrl: (process.env.VUE_APP_API_URL  || "/admin/api") + '/upload',
     }
   },
   methods: {
