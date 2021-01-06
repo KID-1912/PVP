@@ -32,9 +32,9 @@ export default {
       defaults: { // 默认参数配置
         speed: 400,
         loop: true,
-        observer:true,
-        observeSlideChildren:true,
-        observeParents:true,
+        observer: true,
+        observeSlideChildren: true,
+        // observeParents:true,
         autoplay: {
           disableOnInteraction: false
         },
@@ -49,7 +49,7 @@ export default {
     // 覆盖默认配置参数
     const options = Object.assign(this.defaults,this.options);
     setTimeout(() => {
-      this.$swiper = new Swiper(`.${this.swiper}`,options);
+      this.$swiper = new Swiper(`.swiper-container.${this.swiper}`,options);
     },600)
   },
 };

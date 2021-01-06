@@ -28,3 +28,11 @@ export function getCardBanner(){
     method: "get"
   })
 }
+
+
+export function getVideoList(){
+  return request({
+    url: "/videolist",
+    method: "get"
+  })
+}

@@ -18,6 +18,9 @@ const Login = () => import('views/Login.vue');
   
   const ArticleCreate = () => import('views/Articles/ArticleEdit.vue');
   const ArticleList = () => import('views/Articles/ArticleList.vue');
+
+  const VideoCreate = () => import('views/Videos/VideoEdit.vue');
+  const VideoList = () => import('views/Videos/VideoList.vue');
   
   const AdCreate = () => import('views/Ads/AdEdit.vue');
   const AdList = () => import('views/Ads/AdList.vue');
@@ -44,6 +47,9 @@ const router = new Router({
         {path: '/articles/create',component: ArticleCreate},
         {path: '/articles/list',component: ArticleList},
         {path: '/articles/edit/:id',component: ArticleCreate,props: true},
+        {path: '/videos/create',component: VideoCreate},
+        {path: '/videos/list',component: VideoList},
+        {path: '/videos/edit/:id',component: VideoCreate,props: true},
         {path: '/ads/create',component: AdCreate},
         {path: '/ads/list',component: AdList},
         {path: '/ads/edit/:id',component: AdCreate,props: true},

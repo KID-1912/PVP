@@ -27,8 +27,8 @@
   }
 }
 
-
-.t-ellipsis{
+// 文本溢出
+.t-ellipsis{ //1行
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -235,6 +235,11 @@
     height: 0.184rem;
     width: 1.104rem;
     background-position: 47.619% 56.305%;
+  }
+  &.sprite-playCount{
+    width: 0.736rem;
+    height: 0.552rem;
+    background-position: 32.369% 52.578%;
   }
 }
 

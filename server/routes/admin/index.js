@@ -31,7 +31,7 @@ module.exports = app => {
     let queryOptions = {};
     if(req.Model.modelName == 'Category'){
       queryOptions.populate = 'parent'; 
-    }else if(req.Model.modelName == 'Article'){
+    }else if(req.Model.modelName == 'Article' || req.Model.modelName == 'Video'){
       queryOptions.populate = 'category'; 
     }
     const items = await req.Model.find().setOptions(queryOptions);

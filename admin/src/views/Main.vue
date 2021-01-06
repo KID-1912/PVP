@@ -12,6 +12,11 @@
             <el-menu-item index="/articles/list">文章列表</el-menu-item>
           </el-menu-item-group>
           <el-menu-item-group>
+            <template slot="title">视频</template>
+            <el-menu-item index="/videos/create">新建视频</el-menu-item>
+            <el-menu-item index="/videos/list">视频列表</el-menu-item>
+          </el-menu-item-group>
+          <el-menu-item-group>
             <template slot="title">英雄</template>
             <el-menu-item index="/heros/create">新建英雄</el-menu-item>
             <el-menu-item index="/heros/list">英雄列表</el-menu-item>

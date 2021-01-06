@@ -12,6 +12,7 @@ const Main = () =>  import('views/main.vue')
 const Home = () => import('views/Home/home.vue')
 const Article = () => import('views/Article/article.vue')
 const Hero = () => import('views/Hero/hero.vue')
+const Video = () => import('views/Video/video.vue')
 
 const routes = [
   {
@@ -21,16 +22,24 @@ const routes = [
       {path: '/',component: Home},
       {path: '/raiders'},
       {path: '/match'},
-      {path: '/article/:id',component: Article,props: true}
+      {path: '/article/:id',component: Article,props: true},
+      {path: '/video/:id',component: Video,props: true}
     ]
   },
-  {path: '/hero/:id',component: Hero,props: true}
+  {path: '/hero/:id',component: Hero,props: true},
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })
 
 export default router

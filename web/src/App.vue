@@ -1,7 +1,11 @@
 <template>
-  <div id="app" class="pb-3">
+  <div id="app" class="pb-5">
     <!--  :key="$route.path" -->
+    <keep-alive include="Main">
     <router-view/>
+
+    </keep-alive>
+
     <!-- 备案号 -->
     <div class="copyright t-center fs-sm">网站备案：鄂ICP备2020023380号</div>
   </div>

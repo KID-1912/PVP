@@ -7,8 +7,9 @@ module.exports = app => {
   const Article = mongoose.model('Article');
   const Hero = mongoose.model("Hero");
   const Ad = mongoose.model("Ad");
+  const Video = mongoose.model("Video");
 
-// 新闻分类接口
+// 新闻分类及前5个文章接口
   // 1. 查询新闻分类数据
   router.get('/newslist', async (req, res) => {
     // 1.1 polulate+虚拟字段方式查询
@@ -41,7 +42,7 @@ module.exports = app => {
       }
     ]);
 
-    // 3. 每个文章可能属于多个分类，返回数据时添加一个categoryName字段，其值等于文章当前所在分类字段name，
+  // 3. 每个文章可能属于多个分类，返回数据时添加一个categoryName字段，其值等于文章当前所在分类字段name，
     // 热门分类下文章的categoryName名应当为文章的category的第1个name
     (async () => {
       for (let v of list) {
@@ -59,7 +60,7 @@ module.exports = app => {
     })()
   })
 
-// 英雄分类接口
+// 英雄分类及所有英雄接口
   // 2. 查询英雄分类数据
   router.get('/herolist', async (req,res) => {
     let hero = await Category.findOne({
@@ -77,6 +78,29 @@ module.exports = app => {
     res.send(herolist);
   });
 
+// 视频分类及前4个视频接口
+  router.get('/videolist',async(req,res) => {
+    const video = await Category.findOne({
+      name: '视频'
+    });
+    const list = await Category.aggregate([
+      { $match: {parent: video._id} },
+      {
+        $lookup: {
+          from: "videos",
+          localField: "_id",
+          foreignField: "category",
+          as: "videolist"
+        }
+      },
+      {
+        $addFields: {
+          videolist: { $slice: ['$videolist',4]}
+        }
+      }
+    ]);
+    res.send(list);
+  })
 // 文章接口
   // 3. 查询指定id文章
   router.get('/article/:id',async (req,res) => {
@@ -106,6 +130,23 @@ module.exports = app => {
     });
     res.send(model);
   })
+
+// 视频接口
+router.get('/video/:id',async (req,res) => {
+  // 更新视频播放
+  await Video.update(
+    { _id: req.params.id }, 
+    { $inc: { playCount: 1} },
+    {new: true}
+  );
+  // 查询相关视频数据
+  const model = await Video.findById(req.params.id).lean();
+  model.next = await Video.find({
+    'category': model.category,
+    '_id': {"$gt": model._id}
+  }).sort({_id: 1}).limit(3);
+  res.send(model);
+})
 
 // 临时子路由，用于初始化数据时快速录入数据
   // router.get('/initArticle',async (req,res) => {

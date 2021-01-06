@@ -3,7 +3,9 @@
     <topbar/>
     <navbar class="navbar bgc-theme fs-lg t-white" :navs="navs">
     </navbar>
-    <router-view></router-view>
+    <keep-alive include="Home">
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
@@ -11,6 +13,7 @@
   import topbar from 'components/content/TopBar/topbar.vue'
   import navbar from 'components/common/NavBar/navbar.vue'
   export default {
+    name: 'Main',
     data(){
       const navs = [
         {title: "首页",path: "/"},

@@ -102,6 +102,7 @@
   import card from 'components/common/Card/card.vue'
 
   export default {
+    name: 'Hero',
     props: {
       id: {required: true}
     },

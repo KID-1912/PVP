@@ -33,6 +33,7 @@ $font-sizes: (
 // 边框色
 $bdColors: (
   grey: #d4d9de,
+  light: #dcdcdc
 );
 
 $flex-jc: (
@@ -75,3 +76,13 @@ $space-sizes: (
   4: 1.2267, // 20px+
   5: 2.4866  // 40px+
 );
+
+
+// 多行行
+@mixin t-ellipsis($line: 2){
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
