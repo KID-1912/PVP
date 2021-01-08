@@ -291,7 +291,7 @@ html,body{
 body {
   max-width: 1080px;
   margin: 0 auto;
-  font: 13px / 1.2 Arial, "Microsoft YaHei", "\5b8b\4f53" ,sans-serif; /*宋体 unicode */
+  font: 0.7973rem / 1.2 Arial, "Microsoft YaHei", "\5b8b\4f53" ,sans-serif; /*宋体 unicode */
   color: map-get($colors,dark);
   background-color: #f1f1f1;
   // user-select: none; 图片文字不允许用户选中
