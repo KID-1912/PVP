@@ -34,7 +34,7 @@ export default {
         loop: true,
         observer: true,
         observeSlideChildren: true,
-        // observeParents:true,
+        observeParents:true,
         autoplay: {
           disableOnInteraction: false
         },

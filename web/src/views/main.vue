@@ -4,7 +4,7 @@
     <navbar class="navbar bgc-theme fs-lg t-white" :navs="navs">
     </navbar>
     <keep-alive include="Home">
-      <router-view></router-view>
+      <router-view :key="$route.path"></router-view>
     </keep-alive>
   </div>
 </template>

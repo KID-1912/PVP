@@ -1,7 +1,7 @@
 <template>
   <div>
-    <!-- <video class="video-player" :src="video.url" controls></video> -->
-    <embed wmode="direct" flashvars="vid=l32174xgyvg&amp;tpid=0&amp;showend=0&amp;showcfg=1&amp;searchbar=0&amp;skin=//imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf&amp;shownext=1&amp;list=2&amp;autoplay=0" :src="video.url" quality="high" name="tenvideo_flash_player_1610105590756" id="tenvideo_flash_player_1610105590756" bgcolor="#000000" width="640px" height="360px" align="middle" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" pluginspage="http://get.adobe.com/cn/flashplayer/">
+    <video class="video-player" :src="video.url" controls></video>
+<!--     <embed wmode="direct" flashvars="vid=l32174xgyvg&amp;tpid=0&amp;showend=0&amp;showcfg=1&amp;searchbar=0&amp;skin=//imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf&amp;shownext=1&amp;list=2&amp;autoplay=0" :src="video.url" quality="high" name="tenvideo_flash_player_1610105590756" id="tenvideo_flash_player_1610105590756" bgcolor="#000000" width="640px" height="360px" align="middle" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" pluginspage="http://get.adobe.com/cn/flashplayer/"> -->
     <div class="video-info d-flex mt-2 mx-1 py-1">
       <div class="video-banner ml-1"><img :src="video.banner" class="w-100"></div>
       <div class="px-2">

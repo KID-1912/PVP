@@ -1,53 +1,43 @@
-## 手机端官网+管理后台+服务端
-### 一、 入门
-#### 项目介绍
-工具安装和环境搭建(nodejs,npm,mongodb)
-初始化项目
+[开发日志](https://kid-1912.github.io/2020/12/19/pvp/)
+
+项目地址：[webApp](xiyitao.top) [管理后台](xiyitao.top/admin)
+
+### 项目构成
+webApp+内容管理后台+服务端
+
+### 项目结构
+- admin/
+    + 内容管理后台部分
+- web/
+    + webApp端部分
+- server/
+    + 后端部分，最终部署至服务器
+
 
 ### 二、 管理后台
 - 基于Element UI的后台管理基础界面搭建
-
 - 创建分类
-
 - 分类列表
-
 - 修改分类
-
 - 删除分类
-
 - 子分类
-
 - 通用 CRUD 接口
-
 - 装备管理
-
 - 图片上传 (multer)
-
 - 英雄管理
-
 - 编辑英雄 (关联,多选,el-select, multiple)
-
 - 技能编辑
-
 - 文章管理
-
 - 富文本编辑器 (quill)
-
 - 首页广告管理
-
 - 管理员账号管理 (bcrypt)
-
 - 登录页面
-
 - 登录接口 (jwt,jsonwebtoken)
-
 - 服务端登录校验
-
 - 客户端路由限制 (beforeEach, meta)
-
 - 上传文件的登录校验 (el-upload, headers)
 
-#### 三、移动端网站
+### 三、移动端网站
 - "工具样式"概念和 SASS (SCSS)
 - 样式重置
 - 网站色彩和字体定义 (colors, text)

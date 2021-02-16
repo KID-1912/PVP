@@ -5,7 +5,7 @@ Vue.use(Router);
 
 // 一级路由
 import Main from 'views/Main.vue';
-const Login = () => import('views/Login.vue');
+import Login from 'views/Login.vue';
   // 二级路由
   const CategoryCreate = () => import('views/Categorys/CategoryEdit.vue');
   const CategoryList = () => import('views/Categorys/CategoryList.vue');
